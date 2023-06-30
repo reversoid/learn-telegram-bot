@@ -17,7 +17,7 @@ class IsAdmin(BaseFilter):
 
 # Вместо BOT TOKEN HERE нужно вставить токен вашего бота,
 # полученный у @BotFather
-API_TOKEN: str = '5681787061:AAF7n_XVkofeyf1QrMGXeSXAlx6-1rYycV0'
+API_TOKEN: str = 'bot'
 
 # Создаем объекты бота и диспетчера
 bot: Bot = Bot(token=API_TOKEN)
