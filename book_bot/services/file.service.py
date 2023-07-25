@@ -1,7 +1,7 @@
 import os
 
 BOOK_PATH = 'book_bot/book/book.txt'
-PAGE_SIZE = 100
+PAGE_SIZE = 1050
 
 Page = int
 Content = str
@@ -72,15 +72,13 @@ def prepare_book(path: str) -> None:
         full_book = f.read()
         start_index = 0
         page_counter = 1
-        while start_index < len(full_book):
-            part_of_text = full_book[start_index: start_index + PAGE_SIZE]
-            print(part_of_text)
-
+        part_of_text = full_book
+        while True:
             correct_part_of_text, size = _get_part_text(
                 part_of_text, start_index, PAGE_SIZE)
 
             if (size == 0):
-                continue
+                break
 
             book[page_counter] = correct_part_of_text
 
@@ -90,6 +88,3 @@ def prepare_book(path: str) -> None:
 
 # Вызов функции prepare_book для подготовки книги из текстового файла
 prepare_book(os.path.join(os.getcwd(), BOOK_PATH))
-
-
-print(book)
